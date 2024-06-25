@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="live.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id="css-file" rel="stylesheet" href="static/css/green.css">
+        <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
+        <script>
+            function change_css(color_name) {
+                let old_link = document.getElementById('css-file');
+                let new_link = document.createElement('link');
+
+                new_link.setAttribute('id', 'css-file');
+                new_link.setAttribute('rel', 'stylesheet');
+                new_link.setAttribute('type', 'text/css');
+                new_link.setAttribute('href', `static/css/${color_name}.css`);
+
+                document.getElementsByTagName('head').item(0).replaceChild(new_link, old_link);
+            }
+
+            function random_css() {
+                let css_colors = ['amber', 'teal', 'slate', 'green'];
+                let random_n = Math.floor(Math.random() * css_colors.length);
+                let current_color = css_colors[random_n];
+                change_css(current_color);
+            }
+             random_css();
+        </script>
+        <title>~ Adam</title>
+    </head>
+    <body>
+        <div class="container mx-auto h-max">
+            <div class="h-8"></div>
+            <div class="grid grid-cols-1 gap-8 max-w-xl min-w-xl mx-auto">
+                <div class="relative py-4 rounded-md">
+                    <p class="absolute inset-y-0 right-0 pr-7 font-sans text-2xl page-name">~ Adam</p>
+                </div>
+
+                <div class="border-2 border-neutral-800 py-4 px-7 rounded-md cont">
+                    <div class="title-bar">Intro</div><div class="-mt-6"></div>
+                    <div class="font-sans text-base/7">
+                        {{intro_content}}
+
+                    </div>
+                </div>
+
+                <div class="border-2 border-neutral-800 font-mono text-base/7 py-4 px-7 rounded-md cont">
+                    <div class="title-bar">Skills</div><div class="-mt-6"></div>
+                    <div class="font-sans text-base/7">
+                        {{skills_content}}
+
+                    </div>
+                </div>
+
+                <div class="border-2 border-neutral-800 font-mono text-base/7 py-4 px-7 rounded-md cont">
+                    <div class="title-bar">Projects</div><div class="-mt-6"></div>
+                    {{projects_template}}
+                </div>
+
+                <div class="border-2 border-neutral-800 font-sans text-base/9 py-4 px-7 rounded-md cont">
+                    <div class="title-bar">Contact</div><div class="-mt-6"></div>
+                    <span class="pr-1">&#9993;</span>Private Mail <span class="code">GPG Optional</span> <a href="mailto:adam@seishin.dev">adam@seishin.dev</a><br>
+                    <span class="pr-1">&#9993;</span>Confidential Com <span class="code">GPG Mandatory</span> <a href="mailto:adam@seishin.io">adam@seishin.io</a><br>
+                    <span class="pr-2">&#128274;</span>GPG Keys: <a href="https://key.seishin.io" target="_blank">key.seishin.io</a>
+                </div>
+
+                <div class="font-sans text-base/9 py-0">
+                    <div class="grid grid-cols-3 text-center divide-x-2 divide-neutral-800">
+                        <a href="https://thedailywtf.com/articles/special-delivery" target="_blank" class="rounded-l-md f-btn">DailyWTF Story</a>
+                        <a href="https://www.github.com/worstprgr" target="_blank" class="f-btn">GitHub</a>
+                        <a href="https://xkcd.com/927/" target="_blank" class="rounded-r-md f-btn">XKCD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let acc = document.getElementsByClassName('accordion');
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener('click', function() {
+                        this.classList.toggle("acc-active");
+                        let panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + 'px';
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

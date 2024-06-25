@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-neutral-900;
+    @apply text-neutral-200;
+}
+
+a:link, a:visited {
+    @apply text-green-400;
+}
+
+a:hover {
+    @apply text-green-200;
+}
+
+a:active {
+    @apply text-green-300;
+}
+
+.page-name {
+    @apply text-green-400;
+    @apply hover:text-green-300;
+}
+
+.code {
+    @apply bg-neutral-800;
+    @apply rounded;
+    @apply font-mono;
+    @apply text-sm;
+    @apply text-neutral-300;
+    @apply px-1 py-1;
+}
+
+.title-bar {
+    @apply relative;
+    @apply -top-8;
+    @apply -left-5;
+    @apply bg-neutral-900;
+    @apply px-3;
+    @apply w-fit;
+    @apply font-mono;
+    @apply text-green-600;
+    @apply text-lg;
+    @apply uppercase;
+    @apply transition-colors;
+    @apply ease-in;
+    @apply duration-300;
+}
+
+.cont {
+    @apply transition-colors;
+    @apply ease-in;
+    @apply duration-300;
+}
+
+.cont:hover {
+    @apply border-green-400;
+}
+
+.cont:hover .title-bar {
+    @apply text-green-400;
+}
+
+.cont:active {
+    @apply border-green-500;
+}
+
+.f-btn:hover {
+    @apply bg-[#1c1c1c];
+}
+
+.f-btn:active {
+    @apply z-10;
+    @apply bg-[#212121];
+}
+
+.accordion {
+    @apply bg-transparent;
+    @apply font-sans;
+    @apply cursor-pointer;
+    @apply px-3 py-2;
+    @apply w-full;
+    @apply text-left;
+    @apply align-middle;
+}
+
+.accordion:after {
+    @apply content-['\02795'];
+    @apply float-right;
+}
+
+.accordion:hover {
+    @apply bg-[#1c1c1c];
+}
+
+.acc-active {
+    @apply bg-[#212121];
+}
+
+.acc-active:after {
+    @apply content-['\2796'];
+}
+
+.panel {
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    @apply bg-neutral-900;
+    @apply overflow-hidden;
+}
+
