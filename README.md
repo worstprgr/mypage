@@ -1,8 +1,6 @@
 # Adam
 This is my personal site. It's a static page with some generator scripts.  
 
-It changes the color theme at every reload - the implementation is quite lazy and I'm proud of it.  
-
 ## Generators
 ### `recolor.py`
 *Recolor* takes an tailwind css file and converts it to a new file, with a new color theme.
